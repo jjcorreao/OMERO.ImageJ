@@ -179,7 +179,7 @@ def runAsScript():
 
         admin = conn.getAdminService()
         uuid = admin.getEventContext().sessionUuid
-        weka_segmentation(conn, scriptParams, uuid) #TODO: include IJ methods
+        omero_ij(conn, scriptParams, uuid) #TODO: include IJ methods
 
     finally:
         client.closeSession()
