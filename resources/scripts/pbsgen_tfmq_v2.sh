@@ -2,13 +2,13 @@
 
 # ************************************
 # jobgen.sh
-# 
+#
 # PBS file generator for submitting serial jobs to the queue
-# 
+#
 # Joaquin Correa
 # DAS 2014
 # NERSC - LBNL
-# 
+#
 # $ ./pbsgen_tfmq.sh <user> <dataset> <name> <uuid> <ijmacro> <ijmacro args> <outpath> <wtime> <pmem> <all_jobs> <nodes> > job.pbs
 # $ qsub job.pbs
 # $ rm job.pbs

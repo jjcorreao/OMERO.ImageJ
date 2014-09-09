@@ -1,14 +1,5 @@
 __author__ = 'jcorrea'
 
-# def ijm_macro():
-#     pass
-#
-# def ijm_plugin():
-#     pass
-#
-# def video_buffer():
-#     pass
-
 from omero.gateway import BlitzGateway
 import omero.scripts as scripts
 import omero.util.script_utils as script_utils
@@ -20,10 +11,12 @@ import tempfile
 
 import math
 
-OMERO_HOME="/project/projectdirs/ngbi/omero5/OMERO.server"
+# OMERO_HOME="/project/projectdirs/ngbi/omero5/OMERO.server" #TODO: pass env var
+OMERO_HOME = os.environ['OMERO_HOME']
 qsub_path= "/usr/syscom/opt/torque/4.2.6/bin/qsub" #TODO: specify qsub per system
 
-GSCRATCH = "/global/scratch2/sd/jcorrea" #TODO: specify scratch per user
+# GSCRATCH = "/global/scratch2/sd/jcorrea" #TODO: specify scratch per user
+GSCRATCH = os.environ['SCRATCH']
 # GSCRATCH = "/global/scratch2/sd/%s" % (user)
 # cache_dir = os.path.join(GSCRATCH, "ngbi/tmp") #TODO: review cache dir
 cache_dir = GSCRATCH
@@ -107,6 +100,8 @@ def omero_ij(conn, scriptParams, uuid):
         stack_args = "%s/" % (tmpdir_out)
         image_name = image.getName()
         qsub_cmd = ". %s %s %s %s %s %s %s %s %s %s %s %s > %s" % (PBS_GEN, user, dataset, image_name, uuid, MACRO_PATH, stack_args, tmpdir_out, wtime, pmem, all_jobs.name, nodes, pbs_file)
+        # qsub_cmd = ". %s %s %s %s %s %s %s %s %s %s %s %s > %s" % (PBS_GEN, user, dataset, image_name, uuid, MACRO_PATH, stack_args, tmpdir_out, wtime, pmem, all_jobs.name, nodes, pbs_file) #TODO: re-factor arguments
+
 
         print(qsub_cmd)
         os.system(qsub_cmd)
