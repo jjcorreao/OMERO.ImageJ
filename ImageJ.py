@@ -11,8 +11,8 @@ import tempfile
 
 import math
 
-# OMERO_HOME="/project/projectdirs/ngbi/omero5/OMERO.server" #TODO: pass env var
-OMERO_HOME = os.environ['OMERO_HOME']
+OMERO_HOME="/project/projectdirs/ngbi/omero5/OMERO.server" #TODO: pass env var
+# OMERO_HOME = os.environ['OMERO_HOME']
 qsub_path= "/usr/syscom/opt/torque/4.2.6/bin/qsub" #TODO: specify qsub per system
 
 # GSCRATCH = "/global/scratch2/sd/jcorrea" #TODO: specify scratch per user
