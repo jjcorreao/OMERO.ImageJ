@@ -16,8 +16,8 @@
 
 OMERO_HOME=/project/projectdirs/ngbi/omero5/OMERO.server
 ijpath=$OMERO_HOME/lib/scripts/OMERO.HPC/resources/ImageJ/ImageJ-linux64
-xvfb_path=$OMERO_HOME/lib/scripts/OMERO.HPC/resources/scripts/xvfb-run
-TFMQ_PATH=$OMERO_HOME/lib/scripts/OMERO.HPC/resources/taskfarmermq/
+xvfb_path=$OMERO_HOME/lib/scripts/OMERO.ImageJ/resources/scripts/xvfb-run
+TFMQ_PATH=$OMERO_HOME/lib/scripts/OMERO.ImageJ/resources/taskfarmermq/
 VENV=/project/projectdirs/ngbi/jobs/tfmq/python_test
 OMERO_BIN=$OMERO_HOME/bin/omero
 SCRATCH=/global/scratch2/sd/jcorrea

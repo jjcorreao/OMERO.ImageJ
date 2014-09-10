@@ -14,11 +14,18 @@
 #-------------------------------------------------------------------------------
 
 VERSION = "2.4"
-RMQ_HOST = ''
-RMQ_USER = ''
-RMQ_PASS = ''
-RMQ_VHOST = ''
-RMQ_PORT = ''
+# RMQ_HOST = ''
+# RMQ_USER = ''
+# RMQ_PASS = ''
+# RMQ_VHOST = ''
+# RMQ_PORT = ''
+
+RMQ_HOST = 'mq.nersc.gov'
+
+RMQ_USER = 'mlhub'
+RMQ_PASS = 'arntxa40-0'
+RMQ_VHOST = 'mlhub'
+RMQ_PORT = '5672'
 
 MAIN_EXCH = "_MAIN_EXCHANGE"
 TASKQ_POSTFIX = "_TASK_QUEUE"           ## taskqueuenqme = userid+taskqueuename+TASKQ_POSTFIX
