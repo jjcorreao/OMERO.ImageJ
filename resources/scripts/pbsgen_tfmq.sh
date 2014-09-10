@@ -15,7 +15,7 @@
 # ************************************
 
 OMERO_HOME=/project/projectdirs/ngbi/omero5/OMERO.server
-ijpath=$OMERO_HOME/lib/scripts/OMERO.HPC/resources/ImageJ/ImageJ-linux64
+ijpath=$OMERO_HOME/lib/scripts/OMERO.ImageJ/resources/ImageJ/ImageJ-linux64
 xvfb_path=$OMERO_HOME/lib/scripts/OMERO.ImageJ/resources/scripts/xvfb-run
 TFMQ_PATH=$OMERO_HOME/lib/scripts/OMERO.ImageJ/resources/taskfarmermq
 VENV=/project/projectdirs/ngbi/jobs/tfmq/python_test
