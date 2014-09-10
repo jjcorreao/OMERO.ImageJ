@@ -17,7 +17,7 @@
 OMERO_HOME=/project/projectdirs/ngbi/omero5/OMERO.server
 ijpath=$OMERO_HOME/lib/scripts/OMERO.HPC/resources/ImageJ/ImageJ-linux64
 xvfb_path=$OMERO_HOME/lib/scripts/OMERO.ImageJ/resources/scripts/xvfb-run
-TFMQ_PATH=$OMERO_HOME/lib/scripts/OMERO.ImageJ/resources/taskfarmermq/
+TFMQ_PATH=$OMERO_HOME/lib/scripts/OMERO.ImageJ/resources/taskfarmermq
 VENV=/project/projectdirs/ngbi/jobs/tfmq/python_test
 OMERO_BIN=$OMERO_HOME/bin/omero
 SCRATCH=/global/scratch2/sd/jcorrea
@@ -60,7 +60,7 @@ cat << EOF
 module load oracle-jdk/1.7_64bit
 
 export _JAVA_OPTIONS='-Djava.io.tmpdir=$SCRATCH -XX:-UseParallelGC'
-export ${OMERO_HOME}
+# export ${OMERO_HOME}
 
 cd ${PBS_O_WORKDIR}
 
@@ -68,10 +68,10 @@ module load python_base
 source ${VENV}/bin/activate
 
 # taskfarmeMQ listener
-${OMERO_HOME}/lib/scripts/OMERO.HPC/resources/scripts/run_8_tfmq-workers.sh &
+${OMERO_HOME}/lib/scripts/OMERO.ImageJ/resources/scripts/run_8_tfmq-workers.sh &
 
 # taskfarmeMQ client
-${OMERO_HOME}/lib/scripts/OMERO.HPC/resources/taskfarmermq/tfmq-client -i ${all_jobs}
+${OMERO_HOME}/lib/scripts/OMERO.ImageJ/resources/taskfarmermq/tfmq-client -i ${all_jobs}
 
 # Stack merge
 ${OMERO_HOME}/lib/scripts/OMERO.HPC/resources/scripts/xvfb-run -a ${ijpath} -- -macro ${ijmacro} ${ijargs} -batch
