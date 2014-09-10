@@ -84,7 +84,8 @@ def omero_ij(conn, scriptParams, uuid):
 
             img_path2 = os.path.join(tmpdir_out, "plane_%02d.tiff" % z)
             #TODO: memory improvements
-            job_liner=("%s -a %s -Xmx2g -- -macro %s %s -batch:%s:0 \n" % (XVFBRUN_PATH, IMAGEJ_PATH, MACRO_PATH2, ijmacro_args, img_path2))
+            # job_liner=("%s -a %s -Xmx2g -- -macro %s %s -batch:%s:0 \n" % (XVFBRUN_PATH, IMAGEJ_PATH, MACRO_PATH2, ijmacro_args, img_path2))
+            job_liner=("%s -a %s -Xmx2g -- -macro %s %s -batch:%s:0 \n" % (XVFBRUN_PATH, IMAGEJ_PATH, ijm_path, ijmacro_args, img_path2))
             all_jobs.writelines(job_liner)
 
         all_jobs.close()
