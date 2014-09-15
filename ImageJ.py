@@ -127,6 +127,7 @@ def runAsScript():
     for file in os.listdir(ijms_path):
         if file.endswith(".ijm"):
             ijMacros.append(str(os.path.join(ijms_path,file)))
+            print(ijMacros)
 
     client = scripts.client('ImageJ.py', """Run an ImageJ macro""",
 
